@@ -33,4 +33,7 @@ Deploy identical infrastructure across AWS, GCP, and Azure using Terraform modul
 ├── workspaces/ # Separate configurations per environment (dev, staging, prod)
 ├── dns_failover.tf # Route 53 and GCP DNS failover configuration
 └── README.md # This file
+`~/ddd
+`
+
 
