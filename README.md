@@ -33,3 +33,30 @@ Deploy identical infrastructure across AWS, GCP, and Azure using Terraform modul
 ├── workspaces/ # Separate configurations per environment (dev, staging, prod)
 ├── dns_failover.tf # Route 53 and GCP DNS failover configuration
 └── README.md 
+
+....
+
+
+## Usage
+
+### 1. Setup Providers
+
+Configure provider aliases for AWS, GCP, and Azure in `main.tf`:
+
+```hcl
+provider "aws" {
+  region = var.aws_region
+  alias  = "aws"
+}
+
+provider "google" {
+  project = var.gcp_project
+  region  = var.gcp_region
+  alias   = "gcp"
+}
+
+provider "azurerm" {
+  features {}
+  alias = "azure"
+}
+...
