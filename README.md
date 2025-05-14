@@ -60,3 +60,36 @@ provider "azurerm" {
   alias = "azure"
 }
 ...
+
+**Variables and Configuration**:
+
+Define variables in variables.tf for reusable configuration across multiple clouds:
+
+...
+
+variable "aws_region" {
+  description = "AWS region"
+  default     = "us-east-1"
+}
+
+variable "gcp_project" {
+  description = "GCP project ID"
+  default     = "your-gcp-project-id"
+}
+
+variable "gcp_region" {
+  description = "GCP region"
+  default     = "us-central1"
+}
+
+variable "azure_location" {
+  description = "Azure region"
+  default     = "East US"
+}
+
+variable "env" {
+  description = "Environment (dev, staging, prod)"
+  type        = string
+  default     = "dev"
+}
+ ...
