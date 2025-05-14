@@ -56,7 +56,7 @@ provider "google" {
 provider "azurerm" {
   features {}
   alias = "azure"
-}
+}`
 
 ### 2. Variables and Configuration
 Define variables in variables.tf for reusable configuration across multiple clouds:
@@ -85,5 +85,5 @@ variable "env" {
   description = "Environment (dev, staging, prod)"
   type        = string
   default     = "dev"
-}
+}`
 
