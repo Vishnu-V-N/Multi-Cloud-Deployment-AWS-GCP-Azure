@@ -57,6 +57,5 @@ provider "azurerm" {
   features {}
   alias = "azure"
 }
-`
 
 
