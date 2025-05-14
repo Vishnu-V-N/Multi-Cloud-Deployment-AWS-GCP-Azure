@@ -1,0 +1,31 @@
+# GCP Compute Module
+
+resource "google_compute_instance" "default" {
+  count        = var.instance_count
+  name         = "${var.instance_prefix}-${count.index}"
+  machine_type = var.machine_type
+  zone         = var.zone
+
+  boot_disk {
+    initialize_params {
+      image = var.image
+    }
+  }
+
+  network_interface {
+    network = var.network
+    access_config {
+      // Ephemeral IP
+    }
+  }
+
+  metadata = {
+    ssh-keys = var.ssh_keys
+  }
+
+  tags = var.tags
+}
+
+output "instance_ips" {
+  value = google_compute_instance.default[*].network_interface[0].access_config[0].nat_ip
+}

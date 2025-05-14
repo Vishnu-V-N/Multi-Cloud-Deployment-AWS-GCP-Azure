@@ -1,0 +1,30 @@
+# providers.tf
+
+provider "aws" {
+  region = var.aws_region
+  alias  = "aws"
+}
+
+provider "google" {
+  region = var.gcp_region
+  project = var.gcp_project
+  alias  = "gcp"
+}
+
+provider "azurerm" {
+  features {}
+  alias  = "azure"
+}
+
+# Conditional provider usage based on environment
+resource "null_resource" "aws_resources" {
+  count = var.deploy_aws ? 1 : 0
+}
+
+resource "null_resource" "gcp_resources" {
+  count = var.deploy_gcp ? 1 : 0
+}
+
+resource "null_resource" "azure_resources" {
+  count = var.deploy_azure ? 1 : 0
+}

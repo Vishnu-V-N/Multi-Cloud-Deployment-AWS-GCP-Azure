@@ -1,0 +1,38 @@
+output "aws_instance_ids" {
+  value = module.aws.compute.instance_ids
+}
+
+output "gcp_instance_ids" {
+  value = module.gcp.compute.instance_ids
+}
+
+output "azure_vm_ids" {
+  value = module.azure.compute.vm_ids
+}
+
+output "aws_s3_bucket" {
+  value = module.aws.storage.bucket_name
+}
+
+output "gcp_storage_bucket" {
+  value = module.gcp.storage.bucket_name
+}
+
+output "azure_blob_container" {
+  value = module.azure.storage.container_name
+}
+
+output "route53_dns_name" {
+  value = module.aws.dns.dns_name
+}
+
+output "gcp_dns_name" {
+  value = module.gcp.dns.dns_name
+}
+
+output "dns_failover" {
+  value = {
+    aws = module.aws.dns.failover
+    gcp  = module.gcp.dns.failover
+  }
+}
