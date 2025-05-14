@@ -34,7 +34,7 @@ Deploy identical infrastructure across AWS, GCP, and Azure using Terraform modul
 ├── dns_failover.tf # Route 53 and GCP DNS failover configuration
 └── README.md # This file
 
-`~/.
+...
 ## Usage
 
 ### 1. Setup Providers
@@ -57,7 +57,7 @@ provider "azurerm" {
   features {}
   alias = "azure"
 }
-`
+...
 
 ### 2. Variables and Configuration
 Define variables in variables.tf for reusable configuration across multiple clouds:
