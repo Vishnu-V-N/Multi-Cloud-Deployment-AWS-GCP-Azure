@@ -40,9 +40,9 @@ variable "dns_zone_name" {
 
 variable "enable_azure_dns" {
   description = "Enable Azure DNS management"
-  type        = bool
-  default     = false
-}
+  type         = bool
+  default      = false
+}  
 
 variable "enable_failover" {
   description = "Enable DNS failover between AWS and GCP"
